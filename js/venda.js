@@ -8,6 +8,17 @@ listaSessoes.forEach(sessao => {
     selectSessao.appendChild(option);
 });
 
+const urlParams = new URLSearchParams(window.location.search);
+const sessaoSelecionada = urlParams.get('sessao');
+if (sessaoSelecionada) {
+    for (let i = 0; i < selectSessao.options.length; i++) {
+        if (selectSessao.options[i].value === sessaoSelecionada) {
+            selectSessao.selectedIndex = i;
+            break;
+        }
+    }
+}
+
 const formVenda = document.getElementById('form-venda');
 
 formVenda.addEventListener('submit', function(evento) {
