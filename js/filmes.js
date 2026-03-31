@@ -2,6 +2,8 @@ const formFilme = document.getElementById('form-filme');
 
 formFilme.addEventListener('submit', function(evento) {
 
+    evento.preventDefault();
+    
     const titulo = document.getElementById('titulo').value;
     const genero = document.getElementById('genero').value;
     const descricao = document.getElementById('descricao').value;
